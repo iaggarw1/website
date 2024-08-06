@@ -1,0 +1,12 @@
+#typewriter {
+    font-size: 24px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #typewriter span {
+    font-size: 24px; /* Ensure static text has the same font size */
+    font-family: 'Courier New', Courier, monospace; /* Ensure static text has the same font */
+  }
