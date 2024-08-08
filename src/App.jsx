@@ -28,10 +28,15 @@ function App() {
     <div className="app">
       <Navbar />
       {renderComponent()}
-      <div className="h-screen bg-white-200">Content Block 1</div>
-      <div className="h-screen bg-white-300">Content Block 2</div>
-      <div className="h-screen bg-white-400">Content Block 3</div>
-      <div className="h-screen bg-white-500">Content Block 4</div>
+      <div id="about" className="h-screen bg-white-200">
+        <About />
+      </div>
+      <div id="experience" className="h-screen bg-white-300">
+      </div>
+      <div id="work" className="h-screen bg-white-400">
+        <Projects/>
+      </div>
+      <div id="contact" className="h-screen bg-white-500">Content Block 4</div>
     </div>
   );
 }
