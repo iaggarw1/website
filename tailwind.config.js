@@ -3,6 +3,9 @@ module.exports = {
   purge: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   darkMode: true, // or 'media' or 'class'
   theme: {
+    color: {
+      customlightblack: 'rgb(216,216,216)',
+    },
     fontFamily: {
       courier: ['Courier New', 'monospace'],
       fira: ['Fira Code', 'monospace'],

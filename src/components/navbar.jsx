@@ -49,7 +49,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`bg-white p-1 fixed left-0 w-full z-50 flex justify-center space-x-4 transition-all duration-1000 ${isVisible ? 'top-0' : '-top-20'}`}>
+        <nav className={`bg-white p-1 pt-2 pb-3 shadow-md fixed left-0 w-full z-50 flex justify-center space-x-4 transition-all duration-1000 ${isVisible ? 'top-0' : '-top-20'}`}>
             <button onClick={() => handleScrollToSection('home')} className="text-xl font-fira text-black-0 mx-2 hover:opacity-75 text-right">
                 <span className="block leading-none">01</span>
                 <span className="block leading-none">// home</span>
