@@ -30,29 +30,29 @@ function Home() {
           </div>
         </div>
         <div id="buttons-container" className="flex justify-center items-center flex-grow">
-          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 justify-center">
-            <button onClick={() => handleScrollToSection('home')} className="text-lg sm:text-xl font-fira text-black-0 mx-2 hover:opacity-75 text-right">
-              <span className="block leading-none">01</span>
-              <span className="block leading-none">// home</span>
-            </button>
-            <button onClick={() => handleScrollToSection('about')} className="text-lg sm:text-xl font-fira text-black-0 mx-2 hover:opacity-75 text-right">
-              <span className="block leading-none">02</span>
-              <span className="block leading-none">// about</span>
-            </button>
-            <button onClick={() => handleScrollToSection('experience')} className="text-lg sm:text-xl font-fira text-black-0 mx-2 hover:opacity-75 text-right">
-              <span className="block leading-none">03</span>
-              <span className="block leading-none">// experience</span>
-            </button>
-            <button onClick={() => handleScrollToSection('projects')} className="text-lg sm:text-xl font-fira text-black-0 mx-2 hover:opacity-75 text-right">
-              <span className="block leading-none">04</span>
-              <span className="block leading-none">// work</span>
-            </button>
-            <button onClick={() => handleScrollToSection('contact')} className="text-lg sm:text-xl font-fira text-black-0 mx-2 hover:opacity-75 text-right">
-              <span className="block leading-none">05</span>
-              <span className="block leading-none">// contact</span>
-            </button>
-          </div>
-        </div>
+      <div className="flex flex-row space-x-2 sm:space-x-4 justify-center">
+        <button onClick={() => handleScrollToSection('home')} className="text-base lg:text-lg font-fira text-black-0 mx-2 hover:opacity-75 text-right">
+          <span className="block leading-none">01</span>
+          <span className="block leading-none">// home</span>
+        </button>
+        <button onClick={() => handleScrollToSection('about')} className="text-base lg:text-lg font-fira text-black-0 mx-2 hover:opacity-75 text-right">
+          <span className="block leading-none">02</span>
+          <span className="block leading-none">// about</span>
+        </button>
+        <button onClick={() => handleScrollToSection('experience')} className="text-base lg:text-lg font-fira text-black-0 mx-2 hover:opacity-75 text-right">
+          <span className="block leading-none">03</span>
+          <span className="block leading-none">// experience</span>
+        </button>
+        <button onClick={() => handleScrollToSection('projects')} className="text-base lg:text-lg font-fira text-black-0 mx-2 hover:opacity-75 text-right">
+          <span className="block leading-none">04</span>
+          <span className="block leading-none">// work</span>
+        </button>
+        <button onClick={() => handleScrollToSection('contact')} className="text-base lg:text-lg font-fira text-black-0 mx-2 hover:opacity-75 text-right">
+          <span className="block leading-none">05</span>
+          <span className="block leading-none">// contact</span>
+        </button>
+      </div>
+    </div>
         <div className='flex flex-col items-center justify-center h-screen bg-white-500 px-4'>
           <div className="text-center">
             <h1 className='text-4xl sm:text-6xl md:text-8xl font-fira'>Hi, my name is</h1>

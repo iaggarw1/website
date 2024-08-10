@@ -19,7 +19,7 @@ function SolarCar() {
         <p>Details about the SolarCar project...</p>
       </div>
       <button
-        onClick={() => navigate('/projects')}
+        onClick={() => navigate('/')}
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
       >
         Go Back
