@@ -15,7 +15,6 @@ function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
       <div className="flex flex-col w-full">
         <div id="taskbar" className="top-0 left-0 w-full flex justify-between items-center p-4 bg-white transition-opacity duration-1000 z-10">
           <button onClick={() => handleScrollToSection('home')} className="focus:outline-none">
@@ -44,7 +43,7 @@ function Home() {
               <span className="block leading-none">03</span>
               <span className="block leading-none">// experience</span>
             </button>
-            <button onClick={() => handleScrollToSection('work')} className="text-lg sm:text-xl font-fira text-black-0 mx-2 hover:opacity-75 text-right">
+            <button onClick={() => handleScrollToSection('projects')} className="text-lg sm:text-xl font-fira text-black-0 mx-2 hover:opacity-75 text-right">
               <span className="block leading-none">04</span>
               <span className="block leading-none">// work</span>
             </button>

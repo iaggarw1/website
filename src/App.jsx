@@ -1,47 +1,46 @@
-import React, { useState } from 'react';
-import './index.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/home';
 import About from './components/about';
 import Experience from './components/experience';
 import Projects from './components/projects';
 import Contact from './components/contact_form';
 import Navbar from './components/navbar';
+import RecycleThis from './components/projects_pages/recyclethis';
+import SolarCar from './components/projects_pages/solarcar';
+import SupportXR from './components/projects_pages/supportxr';
 
 function App() {
-  const [activeComponent, setActiveComponent] = useState('home');
-
-  const renderComponent = () => {
-    switch (activeComponent) {
-      case 'home':
-        return <Home />;
-      case 'about':
-        return <About />;
-      case 'projects':
-        return <Projects />;
-      case 'contact':
-        return <Contact />;
-      default:
-        return <Home />;
-    }
-  };
-
   return (
-    <div className="app">
-      <Navbar />
-      {renderComponent()}
-      <div id="about" >
-        <About />
+    <Router>
+      <div className="app">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <a id="home">
+                <Home />
+              </a>
+              <a id="about">
+                <About />
+              </a>
+              <a id="experience">
+                <Experience />
+              </a>
+              <a id="projects">
+                <Projects />
+              </a>
+              <a id="contact">
+                <Contact />
+              </a>
+            </>
+          } />
+          <Route path="/recyclethis" element={<RecycleThis />} />
+          <Route path="/solarcar" element={<SolarCar />} />
+          <Route path="/supportxr" element={<SupportXR />} />
+        </Routes>
       </div>
-      <div id="experience" >
-        <Experience />
-      </div>
-      <div id="work">
-        <Projects/>
-      </div>
-      <div id="contact">
-        <Contact />
-      </div>
-    </div>
+    </Router>
   );
 }
 

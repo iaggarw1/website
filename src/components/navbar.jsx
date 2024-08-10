@@ -2,30 +2,29 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const Navbar = () => {
     const [isVisible, setIsVisible] = useState(false); // Initially hidden
-    const sectionRefs = useRef([]);
+    const homeRef = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
-                const anySectionIntersecting = entries.some(entry => entry.isIntersecting);
-                setIsVisible(anySectionIntersecting);
+                const homeEntry = entries.find(entry => entry.target.id === 'home');
+                if (homeEntry) {
+                    setIsVisible(!homeEntry.isIntersecting);
+                }
             },
-            { threshold: 0.01 } // Lower threshold value to handle gaps
+            { threshold: 0.1 } // Adjust threshold as needed
         );
 
-        const sections = ['home', 'about', 'experience', 'work', 'contact'];
-        sections.forEach((sectionId) => {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                sectionRefs.current.push(section);
-                observer.observe(section);
-            }
-        });
+        const homeSection = document.getElementById('home');
+        if (homeSection) {
+            homeRef.current = homeSection;
+            observer.observe(homeSection);
+        }
 
         return () => {
-            sectionRefs.current.forEach((section) => {
-                observer.unobserve(section);
-            });
+            if (homeRef.current) {
+                observer.unobserve(homeRef.current);
+            }
         };
     }, []);
 
