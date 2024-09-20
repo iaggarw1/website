@@ -1,44 +1,47 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/home';
-import About from './components/about';
-import Experience from './components/experience';
-import Projects from './components/projects';
-import Contact from './components/contact_form';
-import Navbar from './components/navbar';
-import RecycleThis from './components/projects_pages/recyclethis';
-import SolarCar from './components/projects_pages/solarcar';
-import SupportXR from './components/projects_pages/supportxr';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import FrontPage from './components/FrontPage';
+import MainContent from './components/MainContent';
+import './App.css'; // Import CSS file for styling
 
 function App() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  const calculateBackground = () => {
+    const { x, y } = mousePosition;
+    const darkCrimson = 'rgb(59, 0, 0)';
+    const lightCrimson = 'rgb(160,0,0)'; // Lighter shade of crimson
+    return `radial-gradient(circle 500px at ${x}px ${y}px, ${lightCrimson}, ${darkCrimson})`;
+  };
+
+  const background = calculateBackground();
+
   return (
     <Router>
-      <div className="app">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <a id="home">
-                <Home />
-              </a>
-              <a id="about">
-                <About />
-              </a>
-              <a id="experience">
-                <Experience />
-              </a>
-              <a id="projects">
-                <Projects />
-              </a>
-              <a id="contact">
-                <Contact />
-              </a>
-            </>
-          } />
-          <Route path="/recyclethis" element={<RecycleThis />} />
-          <Route path="/solarcar" element={<SolarCar />} />
-          <Route path="/supportxr" element={<SupportXR />} />
-        </Routes>
+      <div className="app" style={{ background }}>
+        <div className="left-side">
+          <FrontPage />
+        </div>
+        <div className="right-side">
+          <Routes>
+            <Route path="/" element={<MainContent />} />
+            <Route path="/about" element={<MainContent />} />
+            <Route path="/experience" element={<MainContent />} />
+            <Route path="/projects" element={<MainContent />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

@@ -1,0 +1,49 @@
+.card {
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  flex-grow: 1; /* Allow the card to take up the remaining space */
+  text-align: left; /* Left-align the text within the card */
+  max-width: 600px; /* Set a maximum width for the card */
+}
+
+.card-date {
+  font-size: 0.85em;
+  color: #bdc3c7;
+  margin-right: 10px;
+}
+
+.card:hover {
+  background-color: rgb(112, 2, 2); /* Change background color on hover */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.text-sm {
+  font-size: 0.85em;
+  margin: 0;
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: rgba(140, 0, 0, 0.538);
+  color: rgb(250, 90, 135);
+  padding: 5px 10px;
+  border-radius: 50px; /* Change border-radius to create half-circle ends */
+  margin-right: 5px;
+  font-size: 0.75em;
+}

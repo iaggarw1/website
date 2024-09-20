@@ -1,71 +1,61 @@
+// src/components/Experience.jsx
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import Card from './Card';
 
 const Experience = () => {
-    return (
-        <section className="p-8 bg-gray-100 dark:bg-gray-900">
-            <div className="text-center mb-12">
-                <h1 className="text-center text-4xl sm:text-6xl md:text-8xl font-light">Professional Experience</h1>
-            </div>
-            <div className="relative">
-                <div className="border-l-4 border-gray-500 absolute h-full left-1/2 transform -translate-x-1/2"></div>
-                <div className="space-y-12">
-                    <div className="relative flex flex-col md:flex-row items-center">
-                        <div className="w-full md:w-1/2 pr-8 text-left">
-                            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-2xl ml-auto">
-                                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">NTT Data</h3>
-                                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400">Machine Learning Intern</p>
-                                <p className="text-sm sm:text-base text-gray-500 dark:text-gray-500">May 2024 - August 2024</p>
-                                <ul className="list-disc list-inside mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                                    <li>Developed a Generative Adversarial Network (GAN) to synthetically generate satellite data, enhancing data availability for research.</li>
-                                    <li>Conducted data analysis to identify trends and insights from satellite imagery.</li>
-                                    <li>Assisted in preparing technical reports and presentations for stakeholders.</li>
-                                    <li>Evaluated machine learning models and fine-tuned parameters to optimize results.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="hidden md:block w-1/2 pl-8">
-                            <div className="w-6 h-6 bg-gray-500 rounded-full border-4 border-white dark:border-gray-900 absolute left-1/2 transform -translate-x-1/2"></div>
-                        </div>
-                    </div>
-                    <div className="relative flex flex-col md:flex-row items-center">
-                        <div className="hidden md:block w-1/2 pr-8">
-                            <div className="w-6 h-6 bg-gray-500 rounded-full border-4 border-white dark:border-gray-900 absolute left-1/2 transform -translate-x-1/2"></div>
-                        </div>
-                        <div className="w-full md:w-1/2 pl-8 text-left">
-                            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-2xl mr-auto">
-                                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">University of the Pacific</h3>
-                                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400">Robotics & AI Research Assistant</p>
-                                <p className="text-sm sm:text-base text-gray-500 dark:text-gray-500">January 2024 - May 2024</p>
-                                <ul className="list-disc list-inside mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                                    <li>Responsibility 1</li>
-                                    <li>Responsibility 2</li>
-                                    <li>Responsibility 3</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="relative flex flex-col md:flex-row items-center">
-                        <div className="w-full md:w-1/2 pr-8 text-left">
-                            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-2xl ml-auto">
-                                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Abbott Laboratories</h3>
-                                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400">Embedded Software Engineer</p>
-                                <p className="text-sm sm:text-base text-gray-500 dark:text-gray-500">May 2022 - December 2022</p>
-                                <ul className="list-disc list-inside mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                                    <li>Streamlined and coordinated documentation tasks which resulted in a savings of $100,000 in Q3 & Q4.</li>
-                                    <li>Individual contributor who was instrumental in delivering two software key milestone deliveries for a class C implanted artificial heart.</li>
-                                    <li>Programmed and debugged C programs and applied MISRA C 2012 Standards</li>
-                                    <li>Used tools such as Bitbucket, Git version control, IAR Compiler, and Jira</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="hidden md:block w-1/2 pl-8">
-                            <div className="w-6 h-6 bg-gray-500 rounded-full border-4 border-white dark:border-gray-900 absolute left-1/2 transform -translate-x-1/2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+  const location = useLocation();
+  const isActive = location.pathname === '/experience';
+
+  return (
+    <section id="experience" className={isActive ? 'active-section' : ''}>
+      <h2>Experience</h2>
+      <div className="experience-container">
+        <div className="cards">
+          <div className="card-container">
+            <Card
+              date="2024 - Present"
+              title="Research Assistant · University of the Pacific Robotics Laboratory"
+              content={`
+                Investigating how to use Large Language Models (LLMs) for multi-modal robot control.
+                Utilized Python, YOLO, PyTorch, C++, and ROS in order to develop a multi-modal robotics control system for the myCobot and depth camera/LiDAR.
+                Conducted data collection and analysis from sensors, including LiDAR and depth cameras, to enhance robotic environmental awareness.
+                Actively preparing research for publication in IEEE International Robotic Computing Conference.
+              `}
+              tags={['Python', 'YOLO', 'PyTorch', 'C++', 'ROS']}
+            />
+          </div>
+          <br/>
+          <div className="card-container">
+            <Card
+              date="May 2024 - August 2024"
+              title="Machine Learning Intern · NTT Data"
+              content={`
+                Addressed the challenge of limited affordable SAR satellite data by developing Generative Adversarial Networks (GAN) to generate synthetic satellite imagery.
+                Leveraged Python, PyTorch, Tensorflow, and Docker to design and implement a GAN that enhanced data availability for machine learning models.
+                Conducted data analysis on both synthetic and real satellite imagery to extract trends and insights.
+                Validated the effectiveness of the synthetic data, proving it closely resembled SAR satellite imagery and could be successfully used for model training and research purposes.
+              `}
+              tags={['Python', 'PyTorch', 'Tensorflow', 'Docker', 'GAN', 'Data Analysis']}
+            />
+          </div>
+          <br/>
+          <div className="card-container">
+            <Card
+              date="May 2022 - December 2022"
+              title="Embedded Software Engineer · Abbott Laboratories"
+              content={`
+                Individual contributor who was instrumental in delivering two software key milestone deliveries for class C implanted artificial heart.
+                Streamlined and coordinated documentation tasks which resulted in savings of $100,000 in Q3 & Q4.
+                Developed and debugged C programs, ensuring compliance with MISRA C:2012 standards.
+              `}
+              tags={['Embedded Systems', 'C Programming', 'MISRA C:2012', 'Documentation']}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Experience;

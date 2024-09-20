@@ -1,0 +1,66 @@
+/* src/App.css */
+body {
+  color: white; /* Set default font color to white */
+  margin: 0; /* Remove default margin */
+  overflow: hidden; /* Prevent body from scrolling */
+}
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+a:hover {
+  color: #a42d18; /* Change color on hover (example: tomato color) */
+}
+
+/* Ensure the app container displays its children side by side */
+.app {
+  display: flex;
+  height: 100vh; /* Ensure the full height of the viewport */
+  transition: background 0.2s ease-in-out;
+  background-color: #2c3e50; /* Set a consistent background color for the entire app */
+}
+
+.left-side {
+  width: 50%;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.front-page {
+  padding-left: 20px; /* Add left padding */
+}
+
+.right-side {
+  width: 50%;
+  padding: 20px; /* Optional: Add padding */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  overflow-y: auto; /* Prevent scrolling */
+}
+
+.active {
+  color: white;
+}
+
+.inactive {
+  color: #bdc3c7;
+}
+
+.main-content {
+  height: 100%;
+  overflow: auto; /* Prevent scrolling */
+}
+
+section {
+  padding: 20px 0; /* Add padding to each section */
+  background-color: inherit; /* Ensure sections inherit the background color */
+}
+
+/* Experience section styles */
+.experience-container {
+  display: flex;
+  align-items: flex-start;
+  height: 100%; /* Ensure the container takes full height */
+}

@@ -1,22 +1,25 @@
+// src/components/About.jsx
 import React from 'react';
-import portrait from '../assets/portrait.jpg';
+import { useLocation } from 'react-router-dom';
 
-function About() {
+const About = () => {
+  const location = useLocation();
+  const isActive = location.pathname === '/about';
+
   return (
-    <div className="p-4">
-      <h1 className="text-center text-4xl sm:text-6xl md:text-8xl font-light">About Me</h1>
-      <p className="text-center text-lg sm:text-2xl md:text-4xl font-light">
-        I am a current Masters of Science Computer Science graduate student at the University of the Pacific.
-        I currently work as a Research Assistant for the Robotics Lab at the UOP. 
-        In the past, I have completed a CO-OP at Abbott Laboratories in Pleasanton, CA, where I was a leading contributor to the development of a class C implanted artificial heart.
-        I have also interned at NTT Data in Tokyo, Japan, where I developed a Generative Adversarial Network to synthetically create datasets based on SAR satellite data. 
-        In the future, I aspire to leverage my expertise in AI and robotics to drive innovation.
+    <section id="about" className={isActive ? 'active-section' : ''}>
+      <p className="font-light">
+        In 2022, I embarked on my journey as a <strong>Master of Science in Computer Science</strong> student at the <strong>University of the Pacific</strong>, where I’ve been diving deep into <strong>artificial intelligence</strong> and <strong>robotics</strong>. Currently, I’m working as a <strong>Research Assistant</strong> at the <strong>UOP Robotics Lab</strong>, researching and implementing a ROS to have LLMs control general purpose robots.</p>
+      <br/>
+      <p className='font-light'>
+        Over the years, I’ve had the chance to take on diverse roles, from contributing to the development of a class C implanted artificial heart during a <strong>CO-OP</strong> at <strong><a href="https://www.abbott.com" target="_blank" rel="noopener noreferrer">Abbott Laboratories</a></strong> to interning at <strong><a href="https://www.nttdata.com" target="_blank" rel="noopener noreferrer">NTT Data</a></strong> in Tokyo, where I worked on a <strong>Generative Adversarial Network</strong> to synthesize datasets using <strong>SAR satellite data</strong>.
       </p>
-      <div className="flex justify-center my-8">
-        <img src={portrait} alt="Portrait" className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-50 lg:h-50 rounded-full" />
-      </div>
-    </div>
+      <br/>
+      <p className="font-light">
+        Looking ahead, I’m eager to continue exploring the intersection of <strong>AI</strong> and <strong>robotics</strong>, with the ultimate goal of driving technological advancement and solving complex challenges in these fields.
+      </p>
+    </section>
   );
-}
+};
 
 export default About;
