@@ -8,7 +8,7 @@ const About = () => {
 
   return (
     <section id="about" className={isActive ? 'active-section' : ''}>
-      <p className="font-light">
+      <p className="pt-10 font-light">
         In 2022, I embarked on my journey as a <strong>Master of Science in Computer Science</strong> student at the <strong>University of the Pacific</strong>, where I’ve been diving deep into <strong>artificial intelligence</strong> and <strong>robotics</strong>. Currently, I’m working as a <strong>Research Assistant</strong> at the <strong>UOP Robotics Lab</strong>, researching and implementing a ROS to have LLMs control general purpose robots.</p>
       <br/>
       <p className='font-light'>

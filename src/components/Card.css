@@ -17,6 +17,10 @@
   background-color: rgb(112, 2, 2); /* Change background color on hover */
 }
 
+.card:hover .title{
+  color: rgb(250, 90, 135);
+}
+
 .header {
   display: flex;
   justify-content: space-between;

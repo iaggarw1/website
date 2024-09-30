@@ -9,7 +9,10 @@ const Experience = () => {
 
   return (
     <section id="experience" className={isActive ? 'active-section' : ''}>
-      <h2>Experience</h2>
+      <h2 className="font-light text-xl">
+        <strong>Experience</strong>
+      </h2>
+      <br/>
       <div className="experience-container">
         <div className="cards">
           <div className="card-container">

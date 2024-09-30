@@ -5,6 +5,10 @@ body {
   overflow: hidden; /* Prevent body from scrolling */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit color from parent */
@@ -12,7 +16,7 @@ a {
 }
 
 a:hover {
-  color: #a42d18; /* Change color on hover (example: tomato color) */
+  color: rgb(250, 90, 135);
 }
 
 /* Ensure the app container displays its children side by side */
@@ -23,34 +27,47 @@ a:hover {
   background-color: #2c3e50; /* Set a consistent background color for the entire app */
 }
 
-.left-side {
+.front-page {
   width: 50%;
+  padding-left: 20px; /* Add left padding */
   box-sizing: border-box; /* Ensure padding is included in the width */
+  position: fixed; /* Fix the front-page content */
+  height: 100%;
   overflow: hidden; /* Prevent scrolling */
 }
 
-.front-page {
-  padding-left: 20px; /* Add left padding */
+.main-content {
+  width: 50%;
+  margin-left: 50%; /* Offset by the width of the front-page */
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh; /* Ensure it takes the full height of the viewport */
+  overflow-y: auto; /* Make the main content scrollable */
 }
 
-.right-side {
-  width: 50%;
-  padding: 20px; /* Optional: Add padding */
-  box-sizing: border-box; /* Ensure padding is included in the width */
-  overflow-y: auto; /* Prevent scrolling */
+.main-content::-webkit-scrollbar-thumb {
+  background-color: rgb(59, 0, 0); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Roundness of the scrollbar thumb */
+  border: 3px solid rgb(80, 0, 0); /* Padding around the scrollbar thumb */
+}
+
+/* Custom scrollbar styles for WebKit browsers */
+.main-content::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: rgb(80, 0, 0); /* Background color of the scrollbar track */
 }
 
 .active {
   color: white;
 }
 
+
+
 .inactive {
   color: #bdc3c7;
-}
-
-.main-content {
-  height: 100%;
-  overflow: auto; /* Prevent scrolling */
 }
 
 section {
@@ -63,4 +80,37 @@ section {
   display: flex;
   align-items: flex-start;
   height: 100%; /* Ensure the container takes full height */
+}
+
+.link-item {
+  position: relative;
+  padding-left: 60px; /* Adjust padding to make space for the line */
+}
+
+.link-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px; /* Default length of the line */
+  height: 2px; /* Thickness of the line */
+  background-color: #a42d18; /* Color of the line */
+  transition: width 0.3s ease; /* Smooth transition for width change */
+}
+
+.active-section::before {
+  width: 50px; /* Length of the line when the section is active */
+}
+
+.active-section a {
+   color: rgb(250, 90, 135); /* Change link color when the section is active */
+}
+
+.active-section .link-item::before {
+  width: 45px; /* Length of the line when the section is active */
+}
+
+.active-section .link-item{
+  padding-left: 50px;
 }
