@@ -25,6 +25,7 @@ a:hover {
   height: 100vh; /* Ensure the full height of the viewport */
   transition: background 0.2s ease-in-out;
   background-color: #2c3e50; /* Set a consistent background color for the entire app */
+  overflow-y: auto;
 }
 
 .front-page {
@@ -33,7 +34,11 @@ a:hover {
   box-sizing: border-box; /* Ensure padding is included in the width */
   position: fixed; /* Fix the front-page content */
   height: 100%;
-  overflow: hidden; /* Prevent scrolling */
+  pointer-events: auto; /* Enable pointer events by default */
+}
+
+.custom-right-margin {
+  margin-right: 0 !important; /* Add right margin to the front-page */
 }
 
 .main-content {
@@ -42,21 +47,21 @@ a:hover {
   padding: 20px;
   box-sizing: border-box;
   height: 100vh; /* Ensure it takes the full height of the viewport */
-  overflow-y: auto; /* Make the main content scrollable */
+  position: relative;
 }
 
-.main-content::-webkit-scrollbar-thumb {
+.app::-webkit-scrollbar-thumb {
   background-color: rgb(59, 0, 0); /* Color of the scrollbar thumb */
   border-radius: 10px; /* Roundness of the scrollbar thumb */
   border: 3px solid rgb(80, 0, 0); /* Padding around the scrollbar thumb */
 }
 
 /* Custom scrollbar styles for WebKit browsers */
-.main-content::-webkit-scrollbar {
+.app::-webkit-scrollbar {
   width: 12px; /* Width of the scrollbar */
 }
 
-.main-content::-webkit-scrollbar-track {
+.app::-webkit-scrollbar-track {
   background: rgb(80, 0, 0); /* Background color of the scrollbar track */
 }
 

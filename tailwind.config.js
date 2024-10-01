@@ -29,7 +29,10 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      transform: ['group-hover', 'group-focus-visible'],
+      translate: ['group-hover', 'group-focus-visible'],
+    },
   },
   plugins: [],
 }

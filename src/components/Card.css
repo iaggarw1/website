@@ -21,6 +21,10 @@
   color: rgb(250, 90, 135);
 }
 
+.card:hover .arrow{
+  
+}
+
 .header {
   display: flex;
   justify-content: space-between;

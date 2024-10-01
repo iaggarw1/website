@@ -1,5 +1,5 @@
-import { NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function FrontPage({ background }) {
   const location = useLocation();
@@ -33,25 +33,40 @@ function FrontPage({ background }) {
     };
   }, []);
 
-  const handleNavClick = (e, targetId) => {
+  const handleNavClick = (e, sectionId) => {
     e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(targetId);
+    const section = document.getElementById(sectionId);
+    const mainContent = document.querySelector('.main-content');
+    if (section && mainContent) {
+      mainContent.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth',
+      });
     }
   };
 
+  const handleMouseEnter = () => {
+    document.querySelector('.front-page').classList.add('disable-pointer-events');
+  };
+
+  const handleMouseLeave = () => {
+    document.querySelector('.front-page').classList.remove('disable-pointer-events');
+  };
+
   return (
-    <div className="front-page" style={{ background }}>
+    <div
+      className="front-page"
+      style={{ background }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <h1 className="pl-20 pt-20 text-l font-bold tracking-tight text-slate-200 sm:text-5xl">
         <a href="/">Ishaan Aggarwal</a>
       </h1>
-      <h2 className="pl-20 mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-        Software Engineer & Machine Learning Enthusiast
+      <h2 className="pl-20 mt-3 text-lg font-light tracking-tight text-slate-200 sm:text-xl"><strong>Software Engineer & Machine Learning Enthusiast</strong>
       </h2>
-      <p className="pl-20 mt-4 max-w-xs leading-normal font-light">
-        I build pixel-perfect, engaging, and accessible digital experiences.
+      <p className="pl-20 mt-3 max-w-xs leading-normal font-light custom-right-margin">
+      I explore AI and robotics by working on diverse, impactful projects.
       </p>
       <br />
       <br />
