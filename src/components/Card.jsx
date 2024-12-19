@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
+import { Link } from 'react-router-dom';
 
-const Card = ({ title, content, date, tags = [] }) => {
+const Card = ({ title, content, date, tags, link = [] }) => {
   return (
     <div className="card group">
+      <Link to={link} className="card-link">
       <div className="card-grid">
         <span className="card-date">{date}</span>
         <div className="card-content">
@@ -33,7 +35,8 @@ const Card = ({ title, content, date, tags = [] }) => {
             ))}
           </div>
         </div>
-      </div>
+        </div>
+        </Link>
     </div>
   );
 };
@@ -43,10 +46,6 @@ Card.propTypes = {
   content: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
-};
-
-Card.defaultProps = {
-  tags: [],
 };
 
 export default Card;

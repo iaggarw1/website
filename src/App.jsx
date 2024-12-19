@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import FrontPage from './components/FrontPage';
 import MainContent from './components/MainContent';
+import UOPResearch from './components/UOPResearch';
+import NTTData from './components/NTTData';
+import AbbottLabs from './components/AbbottLabs';
 import './App.css'; // Import CSS file for styling
 
 function App() {
@@ -39,6 +42,9 @@ function App() {
             <Route path="/" element={<MainContent />} />
             <Route path="/about" element={<MainContent />} />
             <Route path="/experience" element={<MainContent />} />
+            <Route path="/experience/UOP-Research" element={<UOPResearch/>} />
+            <Route path="/experience/NTT-Data" element={<NTTData/>} />
+            <Route path="/experience/Abbott-Labs" element={<AbbottLabs/>} />
             <Route path="/projects" element={<MainContent />} />
           </Routes>
         </div>

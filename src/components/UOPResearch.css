@@ -1,0 +1,8 @@
+.UOPResearch {
+  width: 50%;
+  margin-left: 50%; /* Offset by the width of the front-page */
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh; /* Ensure it takes the full height of the viewport */
+  position: relative;
+}

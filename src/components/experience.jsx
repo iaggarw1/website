@@ -17,12 +17,13 @@ const Experience = () => {
         <div className="cards">
           <div className="card-container">
             <Card
-              date="2024 - Present"
+              date="Jan 2024 - Present"
               title="Research Assistant · University of the Pacific Robotics"
               content={`
                 Developed a multi-modal robot control system for the myCobot using Python, YOLO, PyTorch, C++, and IsaacROS, leveraging sensor data from LiDAR and depth cameras to enhance environmental awareness, with research being prepared for publication in the IEEE International Robotic Computing Conference.
               `}
               tags={['Python', 'YOLO v8', 'PyTorch', 'C++', 'ROS', 'LiDAR', 'Computer Vision']}
+              link="/experience/UOP-Research"
             />
           </div>
           <br/>
@@ -33,6 +34,7 @@ const Experience = () => {
               content={`
                 Developed a Generative Adversarial Network (GAN) using Python, PyTorch, TensorFlow, and Docker to generate synthetic SAR satellite imagery, validated its accuracy for model training, and conducted data analysis to enhance data availability for machine learning models.`}
               tags={['Python', 'PyTorch', 'Tensorflow', 'Docker', 'GAN', 'Data Analysis']}
+              link="/experience/NTT-Data"
             />
           </div>
           <br/>
@@ -44,6 +46,7 @@ const Experience = () => {
                 Delivered two software milestones for a Class C implanted artificial heart, streamlined documentation tasks saving $100,000 in Q3 and Q4, and developed and debugged C programs in compliance with MISRA C:2012 standards.
               `}
               tags={['Embedded Systems', 'C Programming', 'MISRA C:2012', 'Documentation']}
+              link="/experience/Abbott-Labs"
             />
           </div>
         </div>

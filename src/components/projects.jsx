@@ -23,6 +23,7 @@ const Projects = () => {
                 Created a single occupant, street-legal solar car to be raced in Formula Sun Grand Prix to qualify for a 2,000 mile race across the United States, utilizing Python and .Net MAUI to design and implement front-end and back-end monitoring dashboards to record car sensor data, managing the transmission of sensor data payloads from car using MySQL databases in AWS, and programming Arduino using C++ to manage contactor on battery box and headlight functionality of car.
               `}
               tags={['Python', 'C++', '.NET','MySQL', 'AWS', 'Embedded Systems']}
+              link="/projects/Solar-Car"
             />
           </div>
           <div className="card-container">
@@ -33,6 +34,7 @@ const Projects = () => {
                 The chatbot application, developed in Python using Reflex and GeminiAPI for backend functionality, features a Figma-designed user-friendly UI, a ResNet-18 based AI model trained on Intel Developer Cloud for accurate medical data interpretation, and real-time interaction capabilities.
                 `}
               tags={['Python', 'PyTorch', 'LLM', 'APIs', 'Flask', 'Intel Developer Cloud']}
+              link="/projects/MirAI"
             />
             <Card
               date="Jan 2024"
@@ -41,6 +43,7 @@ const Projects = () => {
                 Our project, developed using Unity 2022.3.18f and the Meta Quest 3 VR headset, leverages the Meta All in One SDK for passthrough and hand tracking, and Normcore for multiplayer, resulting in a highly immersive and collaborative Extended Reality (XR) experience.
                 `}
               tags={['C#', 'Unity', 'Augmented Reality', 'Meta Quest 3', 'XR']}
+              link="/projects/SupportXR"
             />
             <Card
               date="Jan 2024"
@@ -49,6 +52,7 @@ const Projects = () => {
                 RecycleThis is an iOS app that helps users classify proper disposal of items, offers waste management tips, and locates nearby recycling bins to promote a cleaner community with ease. 
                 `}
               tags={['React Native', 'APIs', 'Python', 'PyTorch', 'MongoDB', 'Expo']}
+              link="/projects/RecycleThis"
             />
           </div>
           <br/>
