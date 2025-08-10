@@ -1,8 +1,8 @@
 // src/components/MainContent.jsx
 import React from 'react';
-import About from './About';
-import Experience from './Experience';
-import Projects from './Projects';
+import About from './about';
+import Experience from './experience';
+import Projects from './projects';
 
 const MainContent = ({ background }) => {
   return (
