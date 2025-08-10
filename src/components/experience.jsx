@@ -8,8 +8,8 @@ const Experience = () => {
   const isActive = location.pathname === '/experience';
 
   return (
-    <section id="experience" className={isActive ? 'active-section' : ''}>
-      <h2 className="font-light text-xl">
+    <section id="experience" className={`${isActive ? 'active-section' : ''} px-4 md:px-0`}>
+      <h2 className="font-light text-lg md:text-xl">
         <strong>Experience</strong>
       </h2>
       <br/>

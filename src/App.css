@@ -44,6 +44,68 @@ a:hover {
   box-sizing: border-box;
   height: 100vh; /* Ensure it takes the full height of the viewport */
   position: relative;
+  overflow-y: auto; /* Enable scrolling within main-content */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+
+  .app {
+    flex-direction: column;
+    height: auto;
+    overflow-y: visible;
+    min-height: 100vh;
+  }
+
+  .front-page {
+    display: none; /* Hide desktop front page on mobile */
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px;
+    padding-top: 80px; /* Add top padding for fixed navbar */
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible; /* Allow natural scrolling on mobile */
+  }
+
+  .custom-right-margin {
+    margin-right: 20px !important;
+  }
+
+  /* Improve section spacing on mobile */
+  section {
+    padding: 15px 0;
+    margin-bottom: 20px;
+    scroll-margin-top: 80px; /* Account for fixed navbar height */
+  }
+
+  /* Better experience container on mobile */
+  .experience-container {
+    height: auto;
+  }
+
+  /* Mobile navigation styles */
+  .mobile-nav {
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-nav a {
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav a:hover {
+    color: rgb(250, 90, 135) !important;
+  }
 }
 
 .app::-webkit-scrollbar-thumb {
@@ -86,6 +148,7 @@ section {
 .link-item {
   position: relative;
   padding-left: 60px; /* Adjust padding to make space for the line */
+  margin-bottom: 10px; /* Add space between navigation items */
 }
 
 .link-item::before {
@@ -100,8 +163,25 @@ section {
   transition: width 0.3s ease; /* Smooth transition for width change */
 }
 
-.active-section::before {
-  width: 50px; /* Length of the line when the section is active */
+/* Mobile responsive navigation */
+@media (max-width: 768px) {
+  .link-item {
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+
+  .link-item::before {
+    width: 10px;
+  }
+
+  .active-section .link-item::before {
+    width: 25px;
+  }
+
+  .active-section .link-item {
+    padding-left: 35px;
+  }
 }
 
 .active-section a {
@@ -113,5 +193,5 @@ section {
 }
 
 .active-section .link-item{
-  padding-left: 50px;
+  padding-left: 55px;
 }

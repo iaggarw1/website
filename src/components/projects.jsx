@@ -8,8 +8,8 @@ const Projects = () => {
   const isActive = location.pathname === '/procects';
 
   return (
-    <section id="projects" className={isActive ? 'active-section' : ''}>
-      <h2 className="font-light text-xl">
+    <section id="projects" className={`${isActive ? 'active-section' : ''} px-4 md:px-0`}>
+      <h2 className="font-light text-lg md:text-xl">
         <strong>Projects</strong>
       </h2>
       <br/>
@@ -26,6 +26,7 @@ const Projects = () => {
               link="/projects/Solar-Car"
             />
           </div>
+          <br/>
           <div className="card-container">
             <Card
               date="Apr 2024"
@@ -36,6 +37,9 @@ const Projects = () => {
               tags={['Python', 'PyTorch', 'LLM', 'APIs', 'Flask', 'Intel Developer Cloud']}
               link="/projects/MirAI"
             />
+          </div>
+          <br/>
+          <div className="card-container">
             <Card
               date="Jan 2024"
               title="SupportXR: A Virtual Reality Customer Support Platform"
@@ -45,6 +49,9 @@ const Projects = () => {
               tags={['C#', 'Unity', 'Augmented Reality', 'Meta Quest 3', 'XR']}
               link="/projects/SupportXR"
             />
+          </div>
+          <br/>
+          <div className="card-container">
             <Card
               date="Jan 2024"
               title="RecycleThis: A Sustainability Project"
